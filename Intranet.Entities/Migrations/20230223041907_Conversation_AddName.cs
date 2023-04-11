@@ -4,26 +4,23 @@
 
 namespace Intranet.Entities.Migrations
 {
-    /// <inheritdoc />
-    public partial class User_Guid : Migration
+    public partial class Conversation_AddName : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Guid",
-                table: "Users",
+                name: "Name",
+                table: "Conversations",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Guid",
-                table: "Users");
+                name: "Name",
+                table: "Conversations");
         }
     }
 }

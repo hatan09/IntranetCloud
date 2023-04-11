@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace Intranet.Controllers
-{
-    [ApiController]
-    public class BaseController : ControllerBase
-    {
-    }
-}
+namespace Intranet;
+
+[ApiController]
+[Route("/api/[controller]/[action]")]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+public class BaseController : ControllerBase { }

@@ -1,11 +1,9 @@
 ﻿using Intranet.Contract;
-using Intranet.Entities.Database;
-using Intranet.Entities.Entities;
+using Intranet.Entities;
 
-namespace Intranet.Repo
+namespace Intranet.Repo;
+
+public class ChatMessageRepository : BaseRepository<ChatMessage>, IChatMessageRepository
 {
-    public class ChatMessageRepository : BaseRepository<ChatMessage>, IChatMessageRepository
-    {
-        public ChatMessageRepository(IntranetContext ic) : base(ic) { }
-    }
+    public ChatMessageRepository(IntranetContext ic) : base(ic) { }
 }

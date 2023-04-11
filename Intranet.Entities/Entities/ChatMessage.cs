@@ -1,13 +1,14 @@
 ﻿using System;
 
-namespace Intranet.Entities.Entities
-{
-    public class ChatMessage : BaseEntity<int>
-    {
-        public User User { get; set; }
-        public string MessageContent { get; set; }
-        public DateTime SentTime { get; set; }
+namespace Intranet.Entities;
 
-        public virtual Conversation Conversation { get; set; }
-    }
+public class ChatMessage : BaseEntity<int>
+{
+    public string MessageContent { get; set; } = default!;
+    public DateTime SentTime { get; set; }
+
+    public int ConversationId { get; set; }
+
+    public string UserId { get; set; } = string.Empty;
+    public User User { get; set; } = default!;
 }
